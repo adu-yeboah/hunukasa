@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+:root {
+  --cloth-cream: #f7efdf;
+  --stamp-charcoal: #2b211a;
+  --adinkra-terracotta: #b54b2e;
+  --kente-gold: #d9a441;
+  --kente-indigo: #1b3a6b;
+}
+
+@theme inline {
+  --color-cream: var(--cloth-cream);
+  --color-charcoal: var(--stamp-charcoal);
+  --color-terracotta: var(--adinkra-terracotta);
+  --color-gold: var(--kente-gold);
+  --color-indigo: var(--kente-indigo);
+}
+
+body {
+  background: #171310;
+  color: var(--stamp-charcoal);
+}
+
+/* subtle woven paper texture for the Raw Cloth Cream background */
+.cloth-texture {
+  background-color: var(--cloth-cream);
+  background-image: repeating-linear-gradient(
+      0deg,
+      rgba(43, 33, 26, 0.025) 0px,
+      rgba(43, 33, 26, 0.025) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(43, 33, 26, 0.02) 0px,
+      rgba(43, 33, 26, 0.02) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+/* tactile "keyboard depth" pressed key */
+.key-3d {
+  border: 2px solid var(--stamp-charcoal);
+  box-shadow: 0 4px 0 var(--stamp-charcoal);
+  transition: transform 80ms ease, box-shadow 80ms ease;
+}
+.key-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--stamp-charcoal);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* ── Mascot & motion library (transform/opacity only: GPU-cheap) ──── */
+
+/* slow adinkra ring rotation behind the mascot */
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spinSlow 42s linear infinite;
+}
+
+/* mascot drifts inside its hero (GIF itself handles bob/blink) */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+.floaty {
+  animation: floaty 2.6s ease-in-out infinite;
+}
+
+/* staggered node entrance on the learning path */
+@keyframes nodeIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.75);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.node-in {
+  animation: nodeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* soft breathing halo behind the active node */
+@keyframes haloPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.2;
+  }
+}
+.halo-pulse {
+  animation: haloPulse 2.2s ease-in-out infinite;
+}
+
+/* kente dash "stitching" slowly marching down the winding path */
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+.dash-move {
+  animation: dashMove 1.4s linear infinite;
+}
+@keyframes pathIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.path-in {
+  animation: pathIn 0.9s ease-out backwards;
+}
+
+@keyframes badgeBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+.badge-bob {
+  animation: badgeBob 1.8s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+.twinkle {
+  animation: twinkle 1.6s ease-in-out infinite;
+}
+
+/* bottom sheet slides up on the home screen */
+@keyframes sheetUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.sheet-up {
+  animation: sheetUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.pop-in {
+  animation: popIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* celebration confetti on the complete screen */
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-30px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(560px) rotate(540deg);
+    opacity: 0;
+  }
+}
+.confetti {
+  animation: confettiFall 3.2s linear infinite;
+}
+
+/* ── Nsoromma mascot motion (transform/opacity only, compositor-driven) ── */
+@keyframes mascot-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+@keyframes mascot-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+@keyframes mascot-sway {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}
+@keyframes mascot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.09); opacity: 0.85; }
+}
