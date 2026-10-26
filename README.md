@@ -1,4 +1,4 @@
-# HunukasaMeka Twi
+# Hunukasa Twi
 
 **A free, open-source Asante Twi course.** Hunukasa means "understand language":
 our mission is helping the diaspora and friends of Ghana actually *speak* Twi —
@@ -26,7 +26,6 @@ Free forever. Community-built. See the provenance statement in
 | [TWI_COURSE_CONTENT.md](TWI_COURSE_CONTENT.md) | The exact content spec (units, dialogues, exercises, citations) |
 | [COURSE_DESIGN.md](COURSE_DESIGN.md) | Pedagogythe exercise ladder and how practice works |
 | [DESIGN.md](DESIGN.md) | Design system (palette, Nsoromma mascot, motion) |
-| [FIGMA.md](FIGMA.md) | Editing the design in Figma |
 
 ## Repo layout
 

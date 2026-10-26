@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-/* Nunitothe Hunukasa UI family (same TTFs as the mobile app).
-   Self-hosted so both platforms render identical type offline. */
+
 const nunito = localFont({
   src: [
     { path: "./fonts/Nunito_400Regular.ttf", weight: "400", style: "normal" },
@@ -17,9 +16,9 @@ const nunito = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "HunukasaUnderstand Language",
+  title: "Hunukasa · Understand Language",
   description:
-    "Learn Ghanaian languages (Twi, Ewe, Ga) with gamified, culturally grounded lessons.",
+    "Learn Asante Twi with gamified, culturally grounded lessons. Free and open-source, offline-first, no ads, no account.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

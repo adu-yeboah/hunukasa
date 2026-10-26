@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { MascotStar } from "../../components/MascotStar";
 
 export const metadata: Metadata = {
-  title: "Hunukasa  Privacy & Terms",
+  title: "Hunukasa · Privacy & Terms",
   description:
     "Privacy Policy and Terms & Conditions for Hunukasa, the free and open-source Asante Twi learning app.",
 };

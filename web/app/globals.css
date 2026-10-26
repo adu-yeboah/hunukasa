@@ -21,6 +21,11 @@ body {
   color: var(--stamp-charcoal);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* subtle woven paper texture for the Raw Cloth Cream background */
 .cloth-texture {
   background-color: var(--cloth-cream);
