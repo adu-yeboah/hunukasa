@@ -320,6 +320,13 @@ export default function LandingPage() {
               one 3-minute lesson at a time.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3.5">
+              <a
+                href="/welcome"
+                className="key-3d inline-flex items-center gap-2.5 rounded-2xl bg-white px-6 py-3.5 text-sm font-black uppercase tracking-[0.18em] text-charcoal"
+                style={{ border: "2px solid #2B211A" }}
+              >
+                Try in your browser · free
+              </a>
               <span className="key-3d inline-flex items-center gap-2.5 rounded-2xl bg-cream px-6 py-3.5 text-sm font-black uppercase tracking-[0.18em] text-charcoal">
                 <span className="text-lg leading-none text-terracotta">▸</span>
                 Google Play · soon

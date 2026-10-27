@@ -27,8 +27,15 @@ export function Header() {
                 ))}
             </nav>
             <a
+                href="/sign-in"
+                className="key-3d ml-auto rounded-2xl border-2 px-4 py-2 text-xs font-black uppercase tracking-widest"
+                style={{ borderColor: `${C.cream}66`, color: C.cream }}
+            >
+                Sign in
+            </a>
+            <a
                 href="/#download"
-                className="key-3d ml-auto rounded-2xl px-4 py-2 text-xs font-black uppercase tracking-widest md:ml-6"
+                className="key-3d rounded-2xl px-4 py-2 text-xs font-black uppercase tracking-widest md:ml-0"
                 style={{ background: C.terracotta, color: C.cream }}
             >
                 Get the app
